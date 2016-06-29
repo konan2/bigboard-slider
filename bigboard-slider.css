@@ -1,0 +1,39 @@
+/*
+    Bigboard slider styles here
+*/
+
+.bigboard-slider{
+    position: relative;
+    height: 0;
+    overflow: hidden;
+}
+
+.bigboard-slider img {
+    position: absolute;
+}
+
+#bigboard-slides .bigboard-slice {
+    height: 100%;
+    float: left;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+#bigboard-slides figure {
+    display: block;
+    position: absolute;
+    left: -.3px;
+    top: 0;
+    right: -.3px;
+    bottom: 0;
+}
+
+#bigboard-slides .back, #bigboard-slides .flipped {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+#bigboard-slides{
+    box-shadow: 0px 0px 92px #8e8e8e;
+}
