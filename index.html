@@ -1,63 +1,75 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <meta charset="utf-8" />
-      <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-      <title>Bigboard Slider</title>
-      <link href="style.css" rel="stylesheet">
-      <link href="bigboard-slider.css" rel="stylesheet">
-      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
-      <script src="bigboard-slider.js" type="text/javascript"></script>
-   </head>
-   <body>
-      <div class="page-wrapper page-sizing centered">
-         <div class="page">
-            <div class="middle">
-               <div class="row">
-                  <div class="container col_8">
-                     <main class="content themed whiteframe">
-                        <h1>BIGboard Slider</h1>
-                        <h2>Full responsive image slider</h2>
-                        <div class="bigboard-slider">
-                           <img src="img/slide2.jpg" />
-                           <img src="img/slide3.jpg" />
-                           <img src="img/slide5.jpeg" />
-                           <img src="img/slide6.png" />
-                           <img src="img/slide7.png" />
-                           <img src="img/slide8.png" />
-                        </div>
-                        <strong>Content:</strong> Sed placerat accumsan ligula. Aliquam felis magna, congue quis, tempus eu, aliquam vitae, ante. Cras neque justo, ultrices at, rhoncus a, facilisis eget, nisl. Quisque vitae pede. Nam et augue. Sed a elit. Ut vel massa. Suspendisse nibh pede, ultrices vitae, ultrices nec, mollis non, nibh. In sit amet pede quis leo vulputate hendrerit. Cras laoreet leo et justo auctor condimentum. Integer id enim. Suspendisse egestas, dui ac egestas mollis, libero orci hendrerit lacus, et malesuada lorem neque ac libero. Morbi tempor pulvinar pede. Donec vel elit.
-                     </main>
-                     <!-- .content -->
-                  </div>
-                  <!-- .container-->
-                  <aside class="right-sidebar col_2">
-                     <div class="content themed whiteframe">
-                        <strong>Right Sidebar:</strong> Integer velit. Vestibulum nisi nunc, accumsan ut, vehicula sit amet, porta a, mi. Nam nisl tellus, placerat eget, posuere eget, egestas eget, dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In elementum urna a eros. Integer iaculis. Maecenas vel elit.
-                     </div>
-                  </aside>
-                  <!-- .right-sidebar -->
-               </div>
+<head>
+  <meta charset="utf-8"/>
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <title>Bigboard Slider</title>
+  <link href="style.css" rel="stylesheet">
+  <link href="bigboard-slider.css" rel="stylesheet">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
+  <script src="bigboard-slider.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="page-wrapper page-sizing centered">
+  <div class="page">
+    <div class="middle">
+      <div class="row">
+        <div class="container col_8">
+          <main class="content themed whiteframe">
+            <h1>BIGboard Slider</h1>
+            <h2>Full responsive image slider</h2>
+            <div class="bigboard-slider">
+              <img src="img/slide2.jpg"/>
+              <img src="img/slide3.jpg"/>
+              <img src="img/slide5.jpeg"/>
+              <img src="img/slide6.png"/>
+              <img src="img/slide7.png"/>
+              <img src="img/slide8.png"/>
             </div>
-            <!-- .middle-->
-         </div>
-         <!-- .wrapper -->
-         <footer class="footer">
-            <div class="content themed whiteframe">
-               <strong>Footer:</strong> Mus elit Morbi mus enim lacus at quis Nam eget morbi. Et semper urna urna non at cursus dolor vestibulum neque enim. Tellus interdum at laoreet laoreet lacinia lacinia sed Quisque justo quis. Hendrerit scelerisque lorem elit orci tempor tincidunt enim Phasellus dignissim tincidunt. Nunc vel et Sed nisl Vestibulum odio montes Aliquam volutpat pellentesque. Ut pede sagittis et quis nunc gravida porttitor ligula.
-            </div>
-         </footer>
-         <!-- .footer -->
+            <strong>Content:</strong> Sed placerat accumsan ligula. Aliquam felis magna, congue quis, tempus eu, aliquam
+            vitae, ante. Cras neque justo, ultrices at, rhoncus a, facilisis eget, nisl. Quisque vitae pede. Nam et
+            augue. Sed a elit. Ut vel massa. Suspendisse nibh pede, ultrices vitae, ultrices nec, mollis non, nibh. In
+            sit amet pede quis leo vulputate hendrerit. Cras laoreet leo et justo auctor condimentum. Integer id enim.
+            Suspendisse egestas, dui ac egestas mollis, libero orci hendrerit lacus, et malesuada lorem neque ac libero.
+            Morbi tempor pulvinar pede. Donec vel elit.
+          </main>
+          <!-- .content -->
+        </div>
+        <!-- .container-->
+        <aside class="right-sidebar col_2">
+          <div class="content themed whiteframe">
+            <strong>Right Sidebar:</strong> Integer velit. Vestibulum nisi nunc, accumsan ut, vehicula sit amet, porta
+            a, mi. Nam nisl tellus, placerat eget, posuere eget, egestas eget, dui. Pellentesque habitant morbi
+            tristique senectus et netus et malesuada fames ac turpis egestas. In elementum urna a eros. Integer iaculis.
+            Maecenas vel elit.
+          </div>
+        </aside>
+        <!-- .right-sidebar -->
       </div>
-      <script>
-         $(document).ready(function() {
-         	var slider = new Slider('.bigboard-slider', {
-         				speed: 90,
-         				slicesNum: 50,
-         				slideInterval: 6000,
-         				flipSpeed: 1.2
-         		});
-         });
-      </script>
-   </body>
+    </div>
+    <!-- .middle-->
+  </div>
+  <!-- .wrapper -->
+  <footer class="footer">
+    <div class="content themed whiteframe">
+      <strong>Footer:</strong> Mus elit Morbi mus enim lacus at quis Nam eget morbi. Et semper urna urna non at cursus
+      dolor vestibulum neque enim. Tellus interdum at laoreet laoreet lacinia lacinia sed Quisque justo quis. Hendrerit
+      scelerisque lorem elit orci tempor tincidunt enim Phasellus dignissim tincidunt. Nunc vel et Sed nisl Vestibulum
+      odio montes Aliquam volutpat pellentesque. Ut pede sagittis et quis nunc gravida porttitor ligula.
+    </div>
+  </footer>
+  <!-- .footer -->
+</div>
+<script>
+  $(document).ready(function () {
+    var slider = new Slider('.bigboard-slider', {
+      speed: 90,
+      slicesNum: 50,
+      slideInterval: 6000,
+      flipSpeed: 1.2
+    });
+  });
+</script>
+</body>
 </html>
