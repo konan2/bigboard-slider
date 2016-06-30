@@ -9,24 +9,21 @@ function Slider(target, params) {
   var index = 0;
   var count = 0;
   var slidesCount = params.slicesNum;
-  var sliderWidth = $(target).innerWidth();
+  var sliderWidth = parent.offsetWidth;
   var slideSliceWidth = sliderWidth / slidesCount;
   var htmlSlides = '';
   var slideBgSize = slidesCount * 100;
-
+  var slidesContainer = document.createElement('div');
+  slidesContainer.id = 'bigboard-slides';
 
   function initSlider() {
-
-    document.querySelector(target).setAttribute("style", "height: 0; overflow: hidden;");
-
-    var slidesContainer = document.createElement('div');
-    slidesContainer.id = 'bigboard-slides';
+    parent.setAttribute("style", "height: 0; overflow: hidden;");
     parent.parentNode.insertBefore(slidesContainer, parent.nextSibling);
 
     for (var i = 0; i < params.slicesNum; i++) {
       htmlSlides += '<div class="bigboard-slice bigboard-slice-' + (i + 1) + '"><figure class="front"></figure><figure class="back"></figure></div>';
     }
-    
+
     slidesContainer.innerHTML = htmlSlides;
     setSlice();
     sliderHeightFunc();
@@ -99,8 +96,7 @@ function Slider(target, params) {
         minHeight = elemImgArray[itemIndex].height;
       }
     }
-
-    document.querySelector('#bigboard-slides').style.height = minHeight + 'px';
+    slidesContainer.style.height = minHeight + 'px';
   }
 
   function incSlice() {
