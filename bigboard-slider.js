@@ -1,5 +1,6 @@
 function Slider(target, params) {
 
+  var parent = document.querySelector(target);
   var frontPieces = document.querySelectorAll('#bigboard-slides .front');
   var backPieces = document.querySelectorAll('#bigboard-slides .back');
   var elemImg = document.querySelectorAll('.bigboard-slider img');
@@ -14,12 +15,16 @@ function Slider(target, params) {
 
   function initSlider() {
 
+    var slidesContainer = document.createElement('div');
+    slidesContainer.setAttribute("id", "bigboard-slides");
+    parent.parentNode.insertBefore(slidesContainer, parent.nextSibling);
+
+
     for (var i = 0; i < params.slicesNum; i++) {
       htmlSlides += '<div class="bigboard-slice bigboard-slice-' + (i + 1) + '"><figure class="front"></figure><figure class="back"></figure></div>';
     }
-
-    $(target).after('<div id=\'bigboard-slides\'></div>');
-    $('#bigboard-slides').html(htmlSlides);
+    
+    document.getElementById("bigboard-slides").innerHTML = htmlSlides;
 
     setSlice();
     sliderHeightFunc();
@@ -29,8 +34,9 @@ function Slider(target, params) {
   initSlider();
 
   function setSlice() {
-    var sliderWidth = $(target).innerWidth();
+    var sliderWidth = parent.offsetWidth;
     var slideSliceWidth = sliderWidth / slidesCount;
+  
     $('#bigboard-slides .bigboard-slice').css({
       'width': slideSliceWidth + 'px'
     });
