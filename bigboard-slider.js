@@ -1,9 +1,10 @@
 function Slider(target, params) {
-
   var parent = document.querySelector(target);
-  var frontPieces = document.querySelectorAll('#bigboard-slides .front');
-  var backPieces = document.querySelectorAll('#bigboard-slides .back');
-  var elemImg = document.querySelectorAll('.bigboard-slider img');
+  var frontPieceSelector = '#bigboard-slides .front';
+  var backPieceSelector = '#bigboard-slides .back';
+  var frontPieces = document.querySelectorAll(frontPieceSelector);
+  var backPieces = document.querySelectorAll(backPieceSelector);
+  var elemImg = document.querySelector(target).children;
   var attrArr = [];
   var index = 0;
   var count = 0;
@@ -13,19 +14,20 @@ function Slider(target, params) {
   var htmlSlides = '';
   var slideBgSize = slidesCount * 100;
 
+
   function initSlider() {
 
-    var slidesContainer = document.createElement('div');
-    slidesContainer.setAttribute("id", "bigboard-slides");
-    parent.parentNode.insertBefore(slidesContainer, parent.nextSibling);
+    document.querySelector(target).setAttribute("style", "height: 0; overflow: hidden;");
 
+    var slidesContainer = document.createElement('div');
+    slidesContainer.id = 'bigboard-slides';
+    parent.parentNode.insertBefore(slidesContainer, parent.nextSibling);
 
     for (var i = 0; i < params.slicesNum; i++) {
       htmlSlides += '<div class="bigboard-slice bigboard-slice-' + (i + 1) + '"><figure class="front"></figure><figure class="back"></figure></div>';
     }
     
-    document.getElementById("bigboard-slides").innerHTML = htmlSlides;
-
+    slidesContainer.innerHTML = htmlSlides;
     setSlice();
     sliderHeightFunc();
     incSlice();
@@ -49,10 +51,10 @@ function Slider(target, params) {
       }
 
       if (count % 2 === 0) {
-        setBg('#bigboard-slides .front', attrArr[index]);
+        setBg(frontPieceSelector, attrArr[index]);
 
       } else {
-        setBg('#bigboard-slides .back', attrArr[index]);
+        setBg(backPieceSelector, attrArr[index]);
       }
 
     }
@@ -76,8 +78,8 @@ function Slider(target, params) {
       });
     }
 
-    setBgPos('#bigboard-slides .front');
-    setBgPos('#bigboard-slides .back');
+    setBgPos(frontPieceSelector);
+    setBgPos(backPieceSelector);
 
     // set the flip speed
     $('.bigboard-slice').css({
