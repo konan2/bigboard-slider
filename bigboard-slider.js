@@ -1,14 +1,10 @@
 function Slider(target, params) {
 
-  var frontPieces = document.querySelectorAll('#bigboard-slides .front');
-  var backPieces = document.querySelectorAll('#bigboard-slides .back');
   var elemImg = document.querySelectorAll('.bigboard-slider img');
   var attrArr = [];
   var index = 0;
   var count = 0;
   var slidesCount = params.slicesNum;
-  var sliderWidth = $(target).innerWidth();
-  var slideSliceWidth = sliderWidth / slidesCount;
   var htmlSlides = '';
   var slideBgSize = slidesCount * 100;
 
