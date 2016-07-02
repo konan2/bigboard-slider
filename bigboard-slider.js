@@ -1,20 +1,16 @@
 function Slider(target, params) {
   var parent = document.querySelector(target);
+  var slidesContainer = document.createElement('div');
+  slidesContainer.id = 'bigboard-slides';
   var frontPieceSelector = '#bigboard-slides .front';
   var backPieceSelector = '#bigboard-slides .back';
-  var frontPieces = document.querySelectorAll(frontPieceSelector);
-  var backPieces = document.querySelectorAll(backPieceSelector);
   var elemImg = document.querySelector(target).children;
   var attrArr = [];
   var index = 0;
   var count = 0;
   var slidesCount = params.slicesNum;
-  var sliderWidth = parent.offsetWidth;
-  var slideSliceWidth = sliderWidth / slidesCount;
   var htmlSlides = '';
   var slideBgSize = slidesCount * 100;
-  var slidesContainer = document.createElement('div');
-  slidesContainer.id = 'bigboard-slides';
 
   function initSlider() {
     parent.setAttribute("style", "height: 0; overflow: hidden;");
@@ -136,7 +132,7 @@ function Slider(target, params) {
 
   // Function for start/stop the main interval
 
-  $(function () {
+  (function () {
     var timer = null;
 
     window.onfocus = function () {
@@ -151,6 +147,6 @@ function Slider(target, params) {
       clearInterval(timer);
       timer = null;
     };
-  });
+  })();
 
 }
