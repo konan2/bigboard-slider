@@ -31,10 +31,11 @@ function Slider(target, params) {
   function setSlice() {
     var sliderWidth = parent.offsetWidth;
     var slideSliceWidth = sliderWidth / slidesCount;
-  
-    $('#bigboard-slides .bigboard-slice').css({
-      'width': slideSliceWidth + 'px'
-    });
+
+    for (var i = 0; i < slidesContainer.childNodes.length; i++) {
+      slidesContainer.childNodes[i].style.cssText = 'width:' + slideSliceWidth + 'px;' + 'transition: transform ' + params.flipSpeed + 's',
+      'webkit-transition: transform ' + params.flipSpeed + 's';
+    }
 
     function setSliceBg() {
 
@@ -64,23 +65,19 @@ function Slider(target, params) {
     }
 
     function setBgPos(selector) {
-      $(selector).each(function (x) {
-        $(this).css({
-          'background-position': -slideSliceWidth * x + 'px 0'
-        });
-      });
+        var selectorArr = document.querySelectorAll(selector)
+        var selectorArrLength = document.querySelectorAll(selector).length;
+        for (var m = 0; m < selectorArrLength; m++){
+          selectorArr[m].style.backgroundPosition = -slideSliceWidth * m + 'px 0';
+      }
     }
 
     setBgPos(frontPieceSelector);
     setBgPos(backPieceSelector);
 
-    // set the flip speed
-    $('.bigboard-slice').css({
-      'transition': 'transform ' + params.flipSpeed + 's',
-      'webkit-transition': 'transform ' + params.flipSpeed + 's'
-    });
   }
 
+     setSlice();
   //////////////////////// Detect the slider height
 
   function sliderHeightFunc() {
@@ -107,7 +104,7 @@ function Slider(target, params) {
     var slideIndex = 0;
     var interval = setInterval(function () {
       if (++slideIndex <= params.slicesNum) {
-        $('#bigboard-slides .bigboard-slice-' + slideIndex).toggleClass('flipped');
+        document.querySelector("#bigboard-slides .bigboard-slice-" + slideIndex).classList.toggle("flipped");
       } else {
         clearInterval(interval);
         interval = null;
@@ -115,8 +112,9 @@ function Slider(target, params) {
     }, params.speed);
   };
 
+  // Set the slider interval
+
   function SliderInterval() {
-    setSlice();
     incSlice();
     sliderFlipFunc();
   }
@@ -124,6 +122,8 @@ function Slider(target, params) {
   var interval = setInterval(function () {
     SliderInterval();
   }, params.slideInterval);
+
+  // On window resize
 
   window.onresize = function(event) {
     setSlice();
